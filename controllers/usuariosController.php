@@ -2,6 +2,7 @@
 
 use models\Funcionario;
 use models\Usuario;
+use models\Registro;
 
 class usuariosController extends Controller
 {
@@ -77,6 +78,14 @@ class usuariosController extends Controller
             Session::set('usuario_nombre', $usuario->funcionario->nombre);
             Session::set('tiempo', time());
 
+            $registro = new Registro;
+            $registro->ip = $_SERVER['REMOTE_ADDR'];
+            $registro->usuario_id = Session::get('usuario_id');
+            $registro->save();
+
+            $registro = Registro::select('id')->where('usuario_id', Session::get('usuario_id') )->first();
+            Session::set('ingreso', $registro->id);
+
             $this->redireccionar();
         }
 
@@ -85,6 +94,10 @@ class usuariosController extends Controller
 
     public function logout()
     {
+
+        $registro = Usuario::find(Session::get('ingreso'));
+        $registro->save();
+
         Session::destroy();
 
         $this->redireccionar();

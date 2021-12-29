@@ -13,7 +13,10 @@ class Usuario extends Model
         return $this->belongsTo(Funcionario::class);
     }
 
-   
+    public function registros()
+    {
+        return $this->hasMany(Registro::class);
+    }
 
    
 }

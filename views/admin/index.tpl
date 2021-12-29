@@ -2,9 +2,9 @@
     <div class="container">
             <div class="col-md-6 ftco-animate">
                 <div class="sidebar-box ftco-animate">
-                    <h3 class="text-success">Sesiones</h3>
+                    <h3 class="text-success">Registros</h3>
                     <div class="list-group mb-2">
-                        <a href="{$_layoutParams.root}usuarios/" class="list-group-item list-group-item-action">Sesiones</a>
+                        <a href="{$_layoutParams.root}registros/" class="list-group-item list-group-item-action">Registros</a>
                         
                     </div>
                     <h3 class="text-success">Funcionarios</h3>
