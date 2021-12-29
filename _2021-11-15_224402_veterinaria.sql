@@ -1,4 +1,17 @@
+--
+-- Table structure for table `registros`
+--
 
+DROP TABLE IF EXISTS `registros`;
+
+CREATE TABLE `registros` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `ip` int NOT NULL,
+  `usuario_id` int NOT NULL,  
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
 --
 -- Table structure for table `comunas`
 --
